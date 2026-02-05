@@ -28,29 +28,35 @@ const App = () => {
 
   return (
     <div className="main">
-      <p className="count">
-        Count :{" "}
-        <span
-          style={{
-            color: count >= 0 && count <= 6 ? "#000" : "red",
-          }}
-        >
-          {" "}
-          {count}
-        </span>
-      </p>
-      {error && <p className="error">{error}</p>}
+      <div className="container">
+        <p className="count">
+          Count :{" "}
+          <span
+            style={{
+              color: count >= 0 && count <= 6 ? "#000" : "red",
+            }}
+          >
+            {" "}
+            {count}
+          </span>
+        </p>
+        {error && <p className="error">{error}</p>}
 
-      <div>
-        <button className="btn inc" onClick={handleInc}>
-          Inc
-        </button>
-        <button className="btn reset " onClick={handleReset}>
-          Reset
-        </button>
-        <button className="btn dec" disabled={count === 0} onClick={handleDec}>
-          Dec
-        </button>
+        <div>
+          <button className="btn inc" onClick={handleInc}>
+            Inc
+          </button>
+          <button className="btn reset " onClick={handleReset}>
+            Reset
+          </button>
+          <button
+            className="btn dec"
+            disabled={count === 0}
+            onClick={handleDec}
+          >
+            Dec
+          </button>
+        </div>
       </div>
     </div>
   );
